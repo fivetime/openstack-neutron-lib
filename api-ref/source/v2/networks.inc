@@ -107,6 +107,19 @@ The ``network-cascade-delete`` shim extension adds to networks the optional
 boolean attribute, ``cascade``, that when defined as ``true``, removes all
 child objects of a network upon its deletion.
 
+Network internal DNS extension
+==============================
+
+The ``network-internal-dns`` extension adds the ``internal_dns_enabled``
+boolean attribute to networks. This attribute controls whether the network backend
+resolves the names of the ports of the network from within the network. The
+default is ``true``. Setting it to ``false`` is useful when the instances on
+the network only use a DNS service reachable from it, because with the ML2/OVN
+backend it also stops diverting the DNS queries of the network to the chassis
+controller. The publication of DNS records to an external DNS service is not
+affected. Only the ML2/OVN backend honors this attribute. The attribute is not
+available as a list filter or sort key.
+
 Port security
 =============
 
@@ -221,6 +234,7 @@ Response Parameters
    - created_at: created_at_resource
    - dns_domain: dns_domain
    - id: network-id
+   - internal_dns_enabled: internal_dns_enabled
    - ipv4_address_scope: ipv4_address_scope
    - ipv6_address_scope: ipv6_address_scope
    - l2_adjacency: l2_adjacency
@@ -284,6 +298,7 @@ Request
    - network: network
    - admin_state_up: network-admin_state_up-request
    - dns_domain: dns_domain-request
+   - internal_dns_enabled: internal_dns_enabled-request
    - mtu: mtu-request
    - name: network-name-request
    - port_security_enabled: network-port_security_enabled-request
@@ -328,6 +343,7 @@ Response Parameters
    - created_at: created_at_resource
    - dns_domain: dns_domain
    - id: network-id
+   - internal_dns_enabled: internal_dns_enabled
    - ipv4_address_scope: ipv4_address_scope
    - ipv6_address_scope: ipv6_address_scope
    - l2_adjacency: l2_adjacency
@@ -453,6 +469,7 @@ Response Parameters
    - created_at: created_at_resource
    - dns_domain: dns_domain
    - id: network-id
+   - internal_dns_enabled: internal_dns_enabled
    - ipv4_address_scope: ipv4_address_scope
    - ipv6_address_scope: ipv6_address_scope
    - l2_adjacency: l2_adjacency
@@ -518,6 +535,7 @@ Request
    - network: network
    - admin_state_up: network-admin_state_up-request
    - dns_domain: dns_domain-request
+   - internal_dns_enabled: internal_dns_enabled-request
    - mtu: mtu-request
    - name: network-name-request
    - port_security_enabled: network-port_security_enabled-request
@@ -566,6 +584,7 @@ Response Parameters
    - created_at: created_at_resource
    - dns_domain: dns_domain
    - id: network-id
+   - internal_dns_enabled: internal_dns_enabled
    - ipv4_address_scope: ipv4_address_scope
    - ipv6_address_scope: ipv6_address_scope
    - l2_adjacency: l2_adjacency
@@ -633,6 +652,7 @@ Request
    - networks: networks
    - admin_state_up: network-admin_state_up-request
    - dns_domain: dns_domain-request
+   - internal_dns_enabled: internal_dns_enabled-request
    - mtu: mtu-request
    - name: network-name-request
    - port_security_enabled: network-port_security_enabled-request
@@ -667,6 +687,7 @@ Response Parameters
    - created_at: created_at_resource
    - dns_domain: dns_domain
    - id: network-id
+   - internal_dns_enabled: internal_dns_enabled
    - ipv4_address_scope: ipv4_address_scope
    - ipv6_address_scope: ipv6_address_scope
    - l2_adjacency: l2_adjacency

@@ -30,6 +30,7 @@ KNOWN_ATTRIBUTES = (
     'gateway_ip',
     'host_routes',
     'id',
+    'internal_dns_enabled',
     'ip_version',
     'ipv6_address_mode',
     'ipv6_ra_mode',

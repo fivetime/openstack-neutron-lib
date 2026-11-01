@@ -82,6 +82,7 @@ from neutron_lib.api.definitions import network
 from neutron_lib.api.definitions import network_availability_zone
 from neutron_lib.api.definitions import network_cascade_delete
 from neutron_lib.api.definitions import network_ha
+from neutron_lib.api.definitions import network_internal_dns
 from neutron_lib.api.definitions import network_ip_availability
 from neutron_lib.api.definitions import network_ip_availability_details
 from neutron_lib.api.definitions import network_mtu
@@ -250,6 +251,7 @@ _ALL_API_DEFINITIONS = {
     network_availability_zone,
     network_cascade_delete,
     network_ha,
+    network_internal_dns,
     network_ip_availability,
     network_ip_availability_details,
     network_mtu,

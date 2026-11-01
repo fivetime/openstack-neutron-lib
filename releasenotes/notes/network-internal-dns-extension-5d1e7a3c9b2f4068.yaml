@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Added the ``network-internal-dns`` API extension. It adds the
+    ``internal_dns_enabled`` boolean attribute to the ``network`` resource,
+    allowing to enable or disable the internal DNS resolution per network. The
+    default value is ``True``.
