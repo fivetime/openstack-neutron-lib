@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Added the ``network-metadata-stateful-ipv6`` API extension, with the
+    ``metadata_stateful_ipv6_address`` network attribute, ``False`` by default.
+    It allocates a metadata port address on the IPv6 subnets of the network
+    whose addresses are not assigned automatically.

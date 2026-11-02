@@ -31,6 +31,7 @@ KNOWN_ATTRIBUTES = (
     'host_routes',
     'id',
     'internal_dns_enabled',
+    'metadata_stateful_ipv6_address',
     'ip_version',
     'ipv6_address_mode',
     'ipv6_ra_mode',
